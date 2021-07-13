@@ -1,0 +1,44 @@
+﻿<div>
+    <table class="table table-striped">
+        <thead class="thead-red">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date birthday</th>
+                <th scope="col">Category</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{ 
+                int i = 1;
+                foreach(var person in Model.allPersons)
+                {
+                    string dayStr, monthStr, classTr;
+                    dayStr = (person.dayBirth < 10) ? "0" + person.dayBirth : Convert.ToString(person.dayBirth);
+                    monthStr = (person.monthBirth < 10) ? "0" + person.monthBirth : Convert.ToString(person.monthBirth);
+                    if(person.monthBirth == NowDate.nowMonth && person.dayBirth == NowDate.nowDay) {
+                        classTr = "bg-success";
+                    }
+                    else
+                    {
+                        classTr = ((person.monthBirth == NowDate.nowMonth && person.dayBirth < NowDate.nowDay) || (person.monthBirth < NowDate.nowMonth)) ? "bg-danger" : "";
+                    }
+                    <tr class= @classTr>
+                        <th scope="row">@i</th>
+                        <td>@person.name</td>
+                        <td>@dayStr.@monthStr</td>
+                        <td>@person.category</td>
+                        <td class="action-td"><a href="" class="table-button">Update</a></td>
+                        <td class="action-td"><a href="" class="table-button">Delete</a></td>
+                    </tr>
+                    i++;
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<div class="place-buttons">
+    <a href="" class="action-button">Create</a>
+</div>
