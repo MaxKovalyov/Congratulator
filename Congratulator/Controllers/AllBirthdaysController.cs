@@ -11,10 +11,12 @@ namespace Congratulator.Controllers
     public class AllBirthdaysController : Controller
     {
 
+        private readonly IDBServices dbServices;
         private readonly IPerson _allPersons;
 
-        public AllBirthdaysController(IPerson iallPersons)
+        public AllBirthdaysController(IPerson iallPersons, IDBServices dbServices)
         {
+            this.dbServices = dbServices;
             _allPersons = iallPersons;
         }
 
@@ -24,6 +26,16 @@ namespace Congratulator.Controllers
             obj.allPersons = _allPersons.getAllPersons;
 
             return View(obj);
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            if (id != 0)
+            {
+                dbServices.deletePerson(id);
+            }
+            return Redirect("~/AllBirthdays/Index");
         }
     }
 }

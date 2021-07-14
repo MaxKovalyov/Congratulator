@@ -30,7 +30,9 @@ namespace Congratulator.Repository
 
         public void deletePerson(int id)
         {
-
+            Person obj = db.Person.Where(c => c.Id == id).FirstOrDefault();
+            db.Person.Remove(obj);
+            db.SaveChanges();
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Congratulator.Controllers
             if(ModelState.IsValid)
             {
                 dbServices.createPerson(person);
-                return RedirectToAction("Index","AllBirthdays");
+                return Redirect("~/AllBirthdays/Index");
             }
             else
             {
