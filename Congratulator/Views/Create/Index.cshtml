@@ -1,0 +1,35 @@
+﻿@model Person
+
+<div class="form-container">
+    <form class="ui-form" asp-action="Index" method="post">
+        <h3>Добавление дня рождения</h3>
+        <div class="form-row">
+            <label asp-for="Name"></label>
+            <input asp-for="Name">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-row">
+            <label asp-for="DayBirth"></label>
+            <input asp-for="DayBirth">
+            <span asp-validation-for="DayBirth" class="text-danger"></span>
+        </div>
+        <div class="form-row">
+            <label asp-for="MonthBirth"></label>
+            <input asp-for="MonthBirth">
+            <span asp-validation-for="MonthBirth" class="text-danger"></span>
+        </div>
+        <div class="form-row">
+            <label asp-for="Category"></label>
+            <input asp-for="Category">
+            <span asp-validation-for="Category" class="text-danger"></span>
+        </div>
+        <div class="form-row">
+            <label asp-for="UrlImg"></label>
+            <input asp-for="UrlImg">
+            <span asp-validation-for="UrlImg" class="text-danger"></span>
+        </div>
+        <p>
+            <input type="submit" value="Отправить" class="action-button">
+        </p>
+    </form>
+</div>

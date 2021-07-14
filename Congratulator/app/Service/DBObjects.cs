@@ -12,81 +12,80 @@ namespace Congratulator.Service
     {
         public static void Initial(AppDBContent content)
         {
-                
             if(!content.Person.Any())
             {
                 content.AddRange(
                     new Person
                     {
-                        name = "Yuki Asuna",
-                        dayBirth = 14,
-                        monthBirth = 7,
-                        category = "Friends",
-                        urlImg = "/img/asuna.jpg"
+                        Name = "Yuki Asuna",
+                        DayBirth = 14,
+                        MonthBirth = 7,
+                        Category = "Friends",
+                        UrlImg = "/img/asuna.jpg"
                     },
                     new Person
                     {
-                        name = "Geralt iz Rivii",
-                        dayBirth = 16,
-                        monthBirth = 7,
-                        category = "Professors",
-                        urlImg = "/img/geralt.jpg"
+                        Name = "Geralt iz Rivii",
+                        DayBirth = 16,
+                        MonthBirth = 7,
+                        Category = "Professors",
+                        UrlImg = "/img/geralt.jpg"
                     },
                     new Person
                     {
-                        name = "Kakoi-to chel",
-                        dayBirth = 8,
-                        monthBirth = 7,
-                        category = "Familiars",
-                        urlImg = "/img/1.jpg"
+                        Name = "Kakoi-to chel",
+                        DayBirth = 8,
+                        MonthBirth = 7,
+                        Category = "Familiars",
+                        UrlImg = "/img/1.jpg"
                     },
                     new Person
                     {
-                        name = "Levy Leonhart",
-                        dayBirth = 12,
-                        monthBirth = 7,
-                        category = "Professors",
-                        urlImg = "/img/levy.jpg"
+                        Name = "Levy Leonhart",
+                        DayBirth = 12,
+                        MonthBirth = 7,
+                        Category = "Professors",
+                        UrlImg = "/img/levy.jpg"
                     },
                     new Person
                     {
-                        name = "Pokemon Pikachu",
-                        dayBirth = 13,
-                        monthBirth = 7,
-                        category = "Familiars",
-                        urlImg = "/img/pikachu.jpg"
+                        Name = "Pokemon Pikachu",
+                        DayBirth = 13,
+                        MonthBirth = 7,
+                        Category = "Familiars",
+                        UrlImg = "/img/pikachu.jpg"
                     },
                     new Person
                     {
-                        name = "Kristiano Ronaldo",
-                        dayBirth = 8,
-                        monthBirth = 8,
-                        category = "Friends",
-                        urlImg = "/img/ronaldo.jpg"
+                        Name = "Kristiano Ronaldo",
+                        DayBirth = 8,
+                        MonthBirth = 8,
+                        Category = "Friends",
+                        UrlImg = "/img/ronaldo.jpg"
                     },
                     new Person
                     {
-                        name = "Some Dog",
-                        dayBirth = 1,
-                        monthBirth = 10,
-                        category = "Friends",
-                        urlImg = "/img/dog.jpg"
+                        Name = "Some Dog",
+                        DayBirth = 1,
+                        MonthBirth = 10,
+                        Category = "Friends",
+                        UrlImg = "/img/dog.jpg"
                     },
                     new Person
                     {
-                        name = "Ciri Swallow",
-                        dayBirth = 13,
-                        monthBirth = 7,
-                        category = "Family",
-                        urlImg = "/img/ciri.jpg"
+                        Name = "Ciri Swallow",
+                        DayBirth = 13,
+                        MonthBirth = 7,
+                        Category = "Family",
+                        UrlImg = "/img/ciri.jpg"
                     },
                     new Person
                     {
-                        name = "Remuru Tempest",
-                        dayBirth = 13,
-                        monthBirth = 7,
-                        category = "Family",
-                        urlImg = "/img/sliz.jpg"
+                        Name = "Remuru Tempest",
+                        DayBirth = 13,
+                        MonthBirth = 7,
+                        Category = "Family",
+                        UrlImg = "/img/sliz.jpg"
                     }
                 ) ;
             }

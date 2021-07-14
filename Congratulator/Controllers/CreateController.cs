@@ -2,86 +2,39 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using Congratulator.Interfaces;
+using Congratulator.Models;
+using Congratulator.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Congratulator.Controllers
 {
     public class CreateController : Controller
     {
-        // GET: CreateController
-        public ActionResult Index()
+        private readonly IDBServices dbServices;
+
+        public CreateController(IDBServices dbServices)
         {
-            return View();
+            this.dbServices = dbServices;
         }
 
-        // GET: CreateController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: CreateController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: CreateController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Index(Person person)
         {
-            try
+            if(ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                dbServices.createPerson(person);
+                return RedirectToAction("Index","AllBirthdays");
             }
-            catch
+            else
             {
-                return View();
+                return View(person);
             }
         }
 
-        // GET: CreateController/Edit/5
-        public ActionResult Edit(int id)
+        public IActionResult Index()
         {
             return View();
-        }
-
-        // POST: CreateController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: CreateController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: CreateController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
         }
     }
 }

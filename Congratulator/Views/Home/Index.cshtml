@@ -1,4 +1,5 @@
-﻿<div>
+﻿@model PersonListViewModel
+<div>
     <table class="table table-striped">
         <thead class="thead-red">
             <tr>
@@ -18,15 +19,15 @@
                 foreach (var person in Model.somePersons)
                 {
                     string dayStr, monthStr, classTr;
-                    dayStr = (person.dayBirth < 10) ? "0" + person.dayBirth : Convert.ToString(person.dayBirth);
-                    monthStr = (person.monthBirth < 10) ? "0" + person.monthBirth : Convert.ToString(person.monthBirth);
-                    classTr = (person.monthBirth == NowDate.nowMonth && person.dayBirth == NowDate.nowDay) ? "bg-success" : "";
+                    dayStr = (person.DayBirth < 10) ? "0" + person.DayBirth : Convert.ToString(person.DayBirth);
+                    monthStr = (person.MonthBirth < 10) ? "0" + person.MonthBirth : Convert.ToString(person.MonthBirth);
+                    classTr = (person.MonthBirth == NowDate.nowMonth && person.DayBirth == NowDate.nowDay) ? "bg-success" : "";
                     <tr class=@classTr>
                         <th scope="row">@i</th>
                         <td>@person.Id</td>
-                        <td>@person.name</td>
+                        <td>@person.Name</td>
                         <td>@dayStr.@monthStr</td>
-                        <td>@person.category</td>
+                        <td>@person.Category</td>
                         <td class="action-td"><a href="" class="table-button">Update</a></td>
                         <td class="action-td"><a href="" class="table-button">Delete</a></td>
                     </tr>
@@ -37,5 +38,5 @@
     </table>
 </div>
 <div class="place-buttons">
-    <a href="" class="action-button">Create</a>
+    <a href="/Create/Index" class="action-button">Create</a>
 </div>

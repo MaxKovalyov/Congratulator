@@ -31,6 +31,7 @@ namespace Congratulator
             services.AddDbContext<AppDBContent>(x => x.UseSqlServer(Config.ConnectionString));
             services.AddControllersWithViews().SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
             services.AddTransient<IPerson, PersonRepository>();
+            services.AddTransient<IDBServices, DBServicesRepository>();
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(Config.ConnectionString));
         }
 
