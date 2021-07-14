@@ -88,7 +88,7 @@ namespace Congratulator.Service
                         category = "Family",
                         urlImg = "/img/sliz.jpg"
                     }
-                );
+                ) ;
             }
 
             content.SaveChanges();

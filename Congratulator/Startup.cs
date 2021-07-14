@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using Congratulator.Interfaces;
@@ -18,13 +19,16 @@ namespace Congratulator
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration;
         public Startup(IConfiguration configuration) => Configuration = configuration;
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             //Подключение конфига из appsettings.json
             Configuration.Bind("Project", new Config());
+            services.AddDbContext<AppDBContent>(x => x.UseSqlServer(Config.ConnectionString));
             services.AddControllersWithViews().SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
             services.AddTransient<IPerson, PersonRepository>();
             services.AddDbContext<AppDBContent>(options => options.UseSqlServer(Config.ConnectionString));

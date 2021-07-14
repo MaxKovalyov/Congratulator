@@ -10,7 +10,9 @@ namespace Congratulator.Migrations
                 name: "Person",
                 columns: table => new
                 {
-                    name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     dayBirth = table.Column<int>(type: "int", nullable: false),
                     monthBirth = table.Column<int>(type: "int", nullable: false),
                     category = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -18,7 +20,7 @@ namespace Congratulator.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Person", x => x.name);
+                    table.PrimaryKey("PK_Person", x => x.Id);
                 });
         }
 

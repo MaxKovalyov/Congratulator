@@ -3,27 +3,27 @@ using Congratulator.Service;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Congratulator.Migrations
 {
     [DbContext(typeof(AppDBContent))]
-    [Migration("20210713092221_Initial")]
-    partial class Initial
+    partial class AppDBContentModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.7")
+                .HasAnnotation("ProductVersion", "5.0.8")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Congratulator.Models.Person", b =>
                 {
-                    b.Property<string>("name")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("category")
                         .HasColumnType("nvarchar(max)");
@@ -34,10 +34,14 @@ namespace Congratulator.Migrations
                     b.Property<int>("monthBirth")
                         .HasColumnType("int");
 
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("urlImg")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("name");
+                    b.HasKey("Id");
 
                     b.ToTable("Person");
                 });

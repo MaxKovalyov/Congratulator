@@ -8,7 +8,9 @@ namespace Congratulator.Models
 {
     public class Person
     {
-        [Key]
+        [Required(ErrorMessage = "Поле пустое!")]
+        public int Id { get; set; }
+
         [Required(ErrorMessage ="Поле пустое!")]
         public string name { get; set; }
 

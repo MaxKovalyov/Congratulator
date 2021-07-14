@@ -3,6 +3,7 @@
         <thead class="thead-red">
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Date birthday</th>
                 <th scope="col">Category</th>
@@ -22,6 +23,7 @@
                     classTr = (person.monthBirth == NowDate.nowMonth && person.dayBirth == NowDate.nowDay) ? "bg-success" : "";
                     <tr class=@classTr>
                         <th scope="row">@i</th>
+                        <td>@person.Id</td>
                         <td>@person.name</td>
                         <td>@dayStr.@monthStr</td>
                         <td>@person.category</td>
