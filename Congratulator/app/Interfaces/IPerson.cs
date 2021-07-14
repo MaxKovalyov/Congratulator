@@ -15,5 +15,7 @@ namespace Congratulator.Interfaces
 
         IEnumerable<Person> getBirthdayPeople { get; }
 
+        Person getOnePerson(int id);
+
     }
 }

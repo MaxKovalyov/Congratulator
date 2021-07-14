@@ -191,3 +191,4 @@ D:\Учеба\SolarTestTask\Congratulator\bin\Debug\netcoreapp3.1\zh-Hant\Micros
 D:\Учеба\SolarTestTask\Congratulator\obj\Debug\netcoreapp3.1\Congratulator.csproj.CoreCompileInputs.cache
 D:\Учеба\SolarTestTask\Congratulator\obj\Debug\netcoreapp3.1\Congratulator.MvcApplicationPartsAssemblyInfo.cache
 D:\Учеба\SolarTestTask\Congratulator\obj\Debug\netcoreapp3.1\Razor\Views\Create\Index.cshtml.g.cs
+D:\Учеба\SolarTestTask\Congratulator\obj\Debug\netcoreapp3.1\Razor\Views\Update\Index.cshtml.g.cs

@@ -25,12 +25,14 @@ namespace Congratulator.Repository
 
         public void updatePerson(int id, Person person)
         {
-
+            person.Id = id;
+            db.Person.Update(person);
+            db.SaveChanges();
         }
 
         public void deletePerson(int id)
         {
-            Person obj = db.Person.Where(c => c.Id == id).FirstOrDefault();
+            Person obj = db.Person.Find(id);
             db.Person.Remove(obj);
             db.SaveChanges();
         }

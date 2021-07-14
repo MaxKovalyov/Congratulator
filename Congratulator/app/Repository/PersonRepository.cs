@@ -26,6 +26,8 @@ namespace Congratulator.Repository
 
         //Получение людей, у которых день рождения сегодня
         public IEnumerable<Person> getBirthdayPeople => appDBContent.Person.Where(c => (c.DayBirth == NowDate.nowDay) && (c.MonthBirth == NowDate.nowMonth)).ToList();
+
+        public Person getOnePerson(int id) => appDBContent.Person.Find(id);
         
 
     }

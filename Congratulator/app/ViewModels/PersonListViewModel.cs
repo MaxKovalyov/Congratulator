@@ -13,5 +13,7 @@ namespace Congratulator.ViewModels
         public IEnumerable<Person> somePersons { get; set; }
 
         public IEnumerable<Person> birthdayPersons { get; set; } 
+
+        public Person onePerson { get; set; }
     }
 }
