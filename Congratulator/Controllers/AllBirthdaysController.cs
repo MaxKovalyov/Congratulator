@@ -23,7 +23,7 @@ namespace Congratulator.Controllers
         public IActionResult Index()
         {
             PersonListViewModel obj = new PersonListViewModel();
-            obj.allPersons = _allPersons.getAllPersons;
+            obj.allPersons = dbServices.orderByPerson(_allPersons.getAllPersons);
 
             return View(obj);
         }

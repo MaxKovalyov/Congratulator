@@ -14,5 +14,7 @@ namespace Congratulator.Interfaces
         void deletePerson(int id);
 
         void updatePerson(int id, Person person);
+
+        IEnumerable<Person> orderByPerson(IEnumerable<Person> persons);
     }
 }

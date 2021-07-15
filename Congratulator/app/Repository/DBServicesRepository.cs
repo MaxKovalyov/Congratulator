@@ -36,5 +36,7 @@ namespace Congratulator.Repository
             db.Person.Remove(obj);
             db.SaveChanges();
         }
+
+        public IEnumerable<Person> orderByPerson(IEnumerable<Person> persons) => persons.OrderBy(c => c.DayBirth).ThenBy(c => c.MonthBirth);
     }
 }
